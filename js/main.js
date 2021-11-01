@@ -24,7 +24,15 @@ function getGitHubProfileInfos(){
 // o fetch se redireciona a URL, pega a resposta e armazena.
 // -> transformou essa resposta em JSON, e virou uma nova resposta
 // Agora o DATA ARMAZENA essa resposta em JSON
-    fetch(url).then(response => response.json()).then(data => alert(data.bio))
+    fetch(url).then(response => response.json()).then(data => {
+        //let nome = document.getElementById('userName')
+        // Usando direto o userName, conseguimos encontrar e alterar da mesma maneira graças a DOM
+        userName.textContent = data.name
+        userBio.textContent = data.bio
+        userLink.href = data.html_url
+        userPhoto.src = data.avatar_url
+        userLogin.textContent = data.login //  Utilizei SPAN pois direto na TAG A, acabava perdendo o ícone.
+    })
 }
 
 getGitHubProfileInfos()
