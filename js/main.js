@@ -15,5 +15,22 @@ function changeSocialMediaLinks(){
     }
 }
 
-
 changeSocialMediaLinks()
+
+
+function getGitHubProfileInfos(){
+    const url = `https://api.github.com/users/${LinksSocialMedia.github}`
+
+// o fetch se redireciona a URL, pega a resposta e armazena.
+    fetch(url).then(response => response.json())
+}
+
+getGitHubProfileInfos()
+
+
+
+// ARROW FUNCTIONS
+function nomedafuncao(argumentos){
+    //code
+}
+
