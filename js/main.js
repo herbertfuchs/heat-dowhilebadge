@@ -22,15 +22,13 @@ function getGitHubProfileInfos(){
     const url = `https://api.github.com/users/${LinksSocialMedia.github}`
 
 // o fetch se redireciona a URL, pega a resposta e armazena.
-    fetch(url).then(response => response.json())
+// -> transformou essa resposta em JSON, e virou uma nova resposta
+// Agora o DATA ARMAZENA essa resposta em JSON
+    fetch(url).then(response => response.json()).then(data => alert(data.bio))
 }
 
 getGitHubProfileInfos()
 
 
 
-// ARROW FUNCTIONS
-function nomedafuncao(argumentos){
-    //code
-}
 
