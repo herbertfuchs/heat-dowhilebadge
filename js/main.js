@@ -9,11 +9,11 @@ const LinksSocialMedia = {
 
 function changeSocialMediaLinks(){
     for (let li of socialLinks.children){
-        //const social = li.getAttribute('class')
-        li.children[1].href = "https://www.youtube.com/UCRMVaMTIikZPxQq4yVvrhTg"
-        alert(li.children[0].href)
+        const social = li.getAttribute('class')
+
+        li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
     }
 }
 
 
-// changeSocialMediaLinks()
+changeSocialMediaLinks()
